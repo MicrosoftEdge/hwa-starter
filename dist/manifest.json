@@ -1,0 +1,70 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "name": "Windows HWA Starter Pack",
+  "description": "The ultimate HWA starter pack project!",
+  "short_name": "Starter Pack",
+  "icons": [{
+    "src": "img/icons/Icon@16w.png",
+    "sizes": "16x16",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@32w.png",
+    "sizes": "32x32",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@48w.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@54w.png",
+    "sizes": "54x54",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@64w.png",
+    "sizes": "64x64",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@90w.png",
+    "sizes": "90x90",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@106w.png",
+    "sizes": "106x106",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@120w.png",
+    "sizes": "120x120",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@128w.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@170w.png",
+    "sizes": "170x170",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@256w.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@270w.png",
+    "sizes": "270x270",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@360w.png",
+    "sizes": "360x360",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Splash.png",
+    "sizes": "1116x540",
+    "type": "image/png"
+  }],
+  "scope": "/",
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "theme_color": "blue",
+  "background_color": "blue"
+}

@@ -26,7 +26,7 @@ gulp.task('copy', () => (
     .pipe(gulp.dest('dist'))
 ));
 
-gulp.task('copy-watch', ['copy'], browserSyncInstance.reload);
+gulp.task('copy-watch', ['copy'], () => browserSyncInstance.reload());
 
 // Use babel to compile ES2015 JS files
 gulp.task('js', ['lint'], () => (
@@ -38,11 +38,11 @@ gulp.task('js', ['lint'], () => (
     .pipe(gulp.dest('dist/js'))
 ));
 
-gulp.task('js-watch', ['js'], browserSyncInstance.reload);
+gulp.task('js-watch', ['js'], () => browserSyncInstance.reload());
 
 // Run linting on all JS files
 gulp.task('lint', () => (
-  gulp.src(['**/*.js', '!node_modules/**', '!dist/**'])
+  gulp.src(['app/**/*.js', 'gulpfile.babel.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())

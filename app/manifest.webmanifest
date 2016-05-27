@@ -1,0 +1,28 @@
+{
+  "lang": "en",
+  "name": "Windows HWA Starter Pack",
+  "short_name": "StarterPack",
+  "icons": [{
+    "src": "img/icons/Icon@44w.png",
+    "sizes": "44x44",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@50w.png",
+    "sizes": "50x50",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Icon@150w.png",
+    "sizes": "150x150",
+    "type": "image/png"
+  }, {
+    "src": "img/icons/Splash@620w.png",
+    "sizes": "620x300",
+    "type": "image/png"
+  }],
+  "scope": "/",
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "theme_color": "blue",
+  "background_color": "blue"
+}
