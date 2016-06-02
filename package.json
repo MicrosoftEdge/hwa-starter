@@ -6,7 +6,7 @@
   "scripts": {
     "deploy": "git subtree push --prefix dist origin gh-pages",
     "generate:local": "node cli generate local http://localhost:3000/",
-    "generate:prod": "node cli generate prod http://zackhall.github.io/hwa-starter",
+    "generate:prod": "node cli generate prod http://microsoftedge.github.io/hwa-starter",
     "launch:local": "npm run generate:local && node cli launch local",
     "launch:prod": "npm run generate:prod && node cli launch prod",
     "serve": "gulp serve"
