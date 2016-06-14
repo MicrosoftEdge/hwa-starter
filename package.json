@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "git subtree push --prefix dist origin gh-pages",
-    "generate:local": "node cli generate local http://localhost:3000/",
-    "generate:prod": "node cli generate prod http://microsoftedge.github.io/hwa-starter",
-    "launch:local": "npm run generate:local && node cli launch local",
-    "launch:prod": "npm run generate:prod && node cli launch prod",
+    "deploy": "gulp && git subtree push --prefix dist origin gh-pages",
+    "generate": "npm run generate:local",
+    "generate:local": "node cli.js generate local http://localhost:3000/",
+    "generate:prod": "node cli.js generate prod http://microsoftedge.github.io/hwa-starter",
+    "launch": "npm run launch:local",
+    "launch:local": "npm run generate:local && node cli.js launch local",
+    "launch:prod": "npm run generate:prod && node cli.js launch prod",
     "serve": "gulp serve"
   },
   "keywords": [],
@@ -29,7 +31,7 @@
     "gulp-eslint": "^2.0.0",
     "gulp-sass": "^2.3.1",
     "gulp-sourcemaps": "^1.6.0",
-    "manifoldjs": "^0.5.1",
+    "manifoldjs": "^0.5.2",
     "rimraf": "^2.5.2"
   },
   "eslintConfig": {
