@@ -15,9 +15,9 @@ program
 
 function action(env, host) {
   const manifest = 
-    JSON.parse(fs.readFileSync(path.join(__dirname, 'app', 'manifest.webmanifest')));
+    JSON.parse(fs.readFileSync(path.join(__dirname, '../app', 'manifest.webmanifest')));
   const shortName = manifest.short_name;
-  const localDir = path.join(__dirname, 'tmp', env);
+  const localDir = path.join(__dirname, '../tmp', env);
   const cwd = path.join(localDir, shortName);
 
   // Clean localDir, build project.
