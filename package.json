@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "clean": "rimraf dist tmp",
-    "deploy": "gulp && git subtree push --prefix dist origin gh-pages",
+    "clean:dist": "rimraf dist",
+    "deploy": "npm run clean:dist && npm run build && git subtree push --prefix dist origin gh-pages",
     "generate": "npm run generate:local",
     "generate:local": "node build/cli.js generate local http://localhost:3000/",
     "generate:prod": "node build/cli.js generate prod http://microsoftedge.github.io/hwa-starter",
