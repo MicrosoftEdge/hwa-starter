@@ -1,7 +1,8 @@
-var path = require('path');
 var BrowserSync = require('browser-sync-webpack-plugin');
+var path = require('path');
+var webpack = require('webpack');
 
-const projectRoot = path.resolve(__dirname, 'app');
+var projectRoot = path.resolve(__dirname, 'app');
 
 var config = {
   entry: path.resolve(__dirname, 'app/index.js'),
@@ -55,5 +56,12 @@ var config = {
     ]
   }
 };
+
+if (process.env.NODE_ENV == 'production') {
+  config.plugins.push(
+    new webpack.optimize.OccurenceOrderPlugin,
+    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
+  );
+}
 
 module.exports = config;
