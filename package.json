@@ -50,5 +50,7 @@
   "eslintConfig": {
     "extends": "airbnb"
   },
-  "dependencies": {}
+  "dependencies": {
+    "normalize.css": "^4.1.1"
+  }
 }

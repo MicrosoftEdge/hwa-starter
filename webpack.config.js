@@ -39,7 +39,7 @@ var config = {
         loader: 'file-loader?name=[name].[ext]',
       },
       {
-        test: /\.scss$/,
+        test: /\.(s?css)$/,
         loaders: ['style', 'css', 'sass']
       },
       {
