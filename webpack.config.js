@@ -1,68 +1,64 @@
-var BrowserSync = require('browser-sync-webpack-plugin');
-var path = require('path');
-var webpack = require('webpack');
+import BrowserSync from 'browser-sync-webpack-plugin';
+import path from 'path';
+import webpack from 'webpack';
 
-var projectRoot = path.resolve(__dirname, 'app');
+const projectRoot = path.resolve(__dirname, 'app');
 
-var config = {
-  entry: path.resolve(__dirname, 'app/index.js'),
-  output: {
-    path: path.resolve(__dirname, 'dist/'),
-    filename: 'app.js'
+export const entry = path.resolve(__dirname, 'app/index.js');
+
+export const output = {
+  path: path.resolve(__dirname, 'dist/'),
+  filename: 'app.js'
+};
+
+export const plugins = [
+  new BrowserSync({
+    host: 'localhost',
+    port: 3000,
+    server: { baseDir: ['dist'] },
+  }),
+];
+
+export const devtool = '#inline-source-map';
+
+export const module = {
+  preLoaders: [{
+    test: /\.js$/,
+    loader: 'eslint',
+    include: projectRoot,
+    exclude: /node_modules/
+  }],
+  loaders: [{
+    test: /\.js$/,
+    loader: 'babel',
+    include: projectRoot,
+    exclude: /node_modules/
   },
-  plugins: [
-    new BrowserSync({
-      host: 'localhost',
-      port: 3000,
-      server: { baseDir: ['dist'] },
-    }),
-  ],
-  devtool: "#inline-source-map",
-  module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint',
-        include: projectRoot,
-        exclude: /node_modules/,
-      },
-    ],
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        include: projectRoot,
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.(html|webmanifest|te?xt)$/,
-        loader: 'file-loader?name=[name].[ext]',
-      },
-      {
-        test: /\.(s?css)$/,
-        loaders: ['style', 'css', 'sass']
-      },
-      {
-        test: /\.(png|jpe?g|gif|ico)$/,
-        loader: 'file-loader?name=[path][name].[ext]&context=./app'
-      },
-      {
-        test: /\.svg$/,
-        loaders: ['url-loader', 'svg-loader']
-      },
-      {
-        test: /\.(?:eot|ttf|woff)$/,
-        loaders: ['url-loader']
-      }
-    ]
-  }
+  {
+    test: /\.(html|webmanifest|te?xt)$/,
+    loader: 'file-loader?name=[name].[ext]'
+  },
+  {
+    test: /\.(s?css)$/,
+    loaders: ['style', 'css', 'sass']
+  },
+  {
+    test: /\.(png|jpe?g|gif|ico)$/,
+    loader: 'file-loader?name=[path][name].[ext]&context=./app'
+  },
+  {
+    test: /\.svg$/,
+    loaders: ['url-loader', 'svg-loader']
+  },
+  {
+    test: /\.(?:eot|ttf|woff)$/,
+    loaders: ['url-loader']
+  }]
 };
 
 if (process.env.NODE_ENV == 'production') {
-  config.plugins.push(
+  plugins.push(
     new webpack.optimize.OccurenceOrderPlugin,
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
   );
 }
-
-module.exports = config;
