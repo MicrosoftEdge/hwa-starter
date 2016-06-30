@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node -r ./node_modules/babel-core/register.js node_modules/webpack/bin/webpack.js",
+    "build": "npm run webpack",
     "build:prod": "cross-env NODE_ENV=production npm run build",
     "clean": "rimraf dist tmp",
     "clean:dist": "rimraf dist",
@@ -15,8 +15,10 @@
     "launch": "npm run launch:local",
     "launch:local": "npm run generate:local && node build/cli.js launch local",
     "launch:prod": "npm run generate:prod && node build/cli.js launch prod",
+    "node": "node -r ./node_modules/babel-core/register.js",
     "package": "node build/cli.js package",
-    "serve": "webpack --watch"
+    "serve": "npm run webpack -- --watch",
+    "webpack": "npm run node -- node_modules/webpack/bin/webpack.js"
   },
   "keywords": [],
   "author": "Microsoft Corporation",
