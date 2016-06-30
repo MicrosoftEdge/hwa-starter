@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node -r ./node_modules/babel-core/register.js node_modules/.bin/webpack",
+    "build": "node -r ./node_modules/babel-core/register.js node_modules/webpack/bin/webpack.js",
     "build:prod": "cross-env NODE_ENV=production npm run build",
     "clean": "rimraf dist tmp",
     "clean:dist": "rimraf dist",
