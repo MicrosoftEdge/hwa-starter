@@ -58,7 +58,7 @@ export const module = {
 
 if (process.env.NODE_ENV == 'production') {
   plugins.push(
-    new webpack.optimize.OccurenceOrderPlugin,
+    new webpack.optimize.OccurrenceOrderPlugin,
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
   );
 }
