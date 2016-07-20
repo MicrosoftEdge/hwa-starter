@@ -11,7 +11,7 @@ Benefits of the starter pack are:
 
 ## Getting started
 
-#### Build
+#### Setup
 To get started, first fork the repo. Then clone to your machine and install the dependencies.
 
 ```
