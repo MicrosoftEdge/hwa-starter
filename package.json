@@ -23,6 +23,10 @@
   "keywords": [],
   "author": "Microsoft Corporation",
   "license": "MIT",
+  "engines" : { "node" : ">=4" },
+  "dependencies": {
+    "normalize.css": "^4.1.1"
+  },
   "devDependencies": {
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
@@ -53,8 +57,5 @@
   },
   "eslintConfig": {
     "extends": "airbnb"
-  },
-  "dependencies": {
-    "normalize.css": "^4.1.1"
   }
 }
