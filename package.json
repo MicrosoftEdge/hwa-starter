@@ -2,7 +2,12 @@
   "name": "hwa-starter",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "repository": "MicrosoftEdge/hwa-starter",
+  "license": "MIT",
   "main": "index.js",
+  "author": "Microsoft Corporation",
+  "engines" : { "node" : ">=4" },
   "scripts": {
     "build": "npm run webpack",
     "build:prod": "cross-env NODE_ENV=production npm run build",
@@ -20,10 +25,6 @@
     "serve": "npm run webpack -- --watch",
     "webpack": "npm run node -- node_modules/webpack/bin/webpack.js"
   },
-  "keywords": [],
-  "author": "Microsoft Corporation",
-  "license": "MIT",
-  "engines" : { "node" : ">=4" },
   "dependencies": {
     "normalize.css": "^4.1.1"
   },
