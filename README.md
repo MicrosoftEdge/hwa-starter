@@ -1,9 +1,12 @@
 # Hosted Web App Starter Pack
 
-This starter pack is designed to get started building your Windows Hosted Web App as fast as possible.
+Everything you need to get started building a Windows Hosted Web App as quickly as possible.
 
-Benefits of the starter pack are:
+## Generate a Windows hosted web application based on a W3C Web App manifest. 
+
+Benefits of the starter pack are: 
 - Tools to help you generate, package, and launch your Windows App
+- A default W3C Manifest. 
 - Sass support
 - ES6 syntax using Babel
 - Code Linting with ESLint
