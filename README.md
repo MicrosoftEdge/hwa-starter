@@ -5,7 +5,7 @@ Generates a Windows hosted web application based on a W3C Web App manifest.
 
 Benefits of the starter pack are: 
 - Tools to help you generate, package, and launch your Windows App
-- Default W3C Manifest. 
+- Template W3C Manifest. 
 - Sass support
 - ES6 syntax using Babel
 - Code Linting with ESLint
