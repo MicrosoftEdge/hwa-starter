@@ -7,9 +7,8 @@
   "license": "MIT",
   "main": "index.js",
   "author": "Microsoft Corporation",
-  "engines" : { "node" : ">=4" },
   "scripts": {
-    "build": "npm run webpack",
+    "build": "webpack",
     "build:prod": "cross-env NODE_ENV=production npm run build",
     "clean": "rimraf dist tmp",
     "clean:dist": "rimraf dist",
@@ -20,10 +19,8 @@
     "launch": "npm run launch:local",
     "launch:local": "npm run generate:local && node build/cli.js launch local",
     "launch:prod": "npm run generate:prod && node build/cli.js launch prod",
-    "node": "node -r ./node_modules/babel-core/register.js",
     "package": "node build/cli.js package",
-    "serve": "npm run webpack -- --watch",
-    "webpack": "npm run node -- node_modules/webpack/bin/webpack.js"
+    "serve": "webpack --watch"
   },
   "dependencies": {
     "normalize.css": "^4.1.1"
