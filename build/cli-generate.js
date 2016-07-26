@@ -1,26 +1,25 @@
 'use strict';
 
-// Include dependencies
-const cp = require('child_process');
-const program = require('commander');
-const fs = require('fs');
-const path = require('path');
-const rimraf = require('rimraf');
+var cp = require('child_process'),
+    program = require('commander'),
+    fs = require('fs'),
+    path = require('path'),
+    rimraf = require('rimraf');
 
-// Define program
 program
   .arguments('<env> <host>')
   .action(action)
   .parse(process.argv);
 
 function action(env, host) {
-  const manifest = 
+  var manifest =
     JSON.parse(fs.readFileSync(path.join(__dirname, '../app', 'manifest.webmanifest')));
-  const shortName = manifest.short_name;
-  const localDir = path.join(__dirname, '../tmp', env);
-  const cwd = path.join(localDir, shortName);
 
-  // Clean localDir, build project.
+  var shortName = manifest.short_name,
+      localDir = path.join(__dirname, '../tmp', env),
+      cwd = path.join(localDir, shortName);
+
+  // Cleanup the local directory and the build project.
   rimraf.sync(localDir);
-  cp.execSync(`manifoldjs ${host} -d ${localDir} -p windows10 -l info`, {stdio: [0,1,2]});
+  cp.execSync('manifoldjs ' + host + ' -d ' + localDir + ' -p windows10 -l info', { stdio: [0, 1, 2] });
 }
